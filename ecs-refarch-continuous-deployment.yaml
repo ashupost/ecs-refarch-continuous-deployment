@@ -40,7 +40,7 @@ Parameters:
     Type: String
     NoEcho: true
     Description: >
-      Token for the user specified above. (https://github.com/settings/tokens)
+      Token for the user specified above. (https://github.com/settings/tokens) 8ade0fd8b93b7525e45c46ed96a71237577a360c
 
   TemplateBucket:
     Type: String
