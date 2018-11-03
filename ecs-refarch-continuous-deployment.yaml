@@ -38,9 +38,10 @@ Parameters:
 
   GitHubToken:
     Type: String
+    Default: 6faf0b3fd436cf33fb4ab49394cdce2cf97744ef
     NoEcho: true
     Description: >
-      Token for the user specified above. (https://github.com/settings/tokens) 6faf0b3fd436cf33fb4ab49394cdce2cf97744ef
+      Token for the user specified above. (https://github.com/settings/tokens) 
 
   TemplateBucket:
     Type: String
