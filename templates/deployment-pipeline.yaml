@@ -146,7 +146,7 @@ Resources:
       ServiceRole: !Ref CodeBuildServiceRole
 
   Pipeline:
-    Type: AWS::CodePipeline::Pipeline
+    Type:  
     Properties:
       RoleArn: !GetAtt CodePipelineServiceRole.Arn
       ArtifactStore:
@@ -155,7 +155,7 @@ Resources:
       Stages:
         - Name: Source
           Actions:
-            - Name: App
+            - Name: GitHub
               ActionTypeId:
                 Category: Source
                 Owner: ThirdParty

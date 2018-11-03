@@ -24,6 +24,7 @@ Parameters:
 
   GitHubUser:
     Type: String
+    Default: ashupost
     Description: Your username on GitHub.
 
   GitHubRepo:
