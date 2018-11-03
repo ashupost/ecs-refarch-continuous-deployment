@@ -163,6 +163,7 @@ Resources:
                 Provider: GitHub
               Configuration:
                 Owner: !Ref GitHubUser
+                PollForSourceChanges: false
                 Repo: !Ref GitHubRepo
                 Branch: !Ref GitHubBranch
                 OAuthToken: !Ref GitHubToken
