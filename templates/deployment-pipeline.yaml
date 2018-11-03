@@ -146,7 +146,7 @@ Resources:
       ServiceRole: !Ref CodeBuildServiceRole
 
   Pipeline:
-    Type:  
+    Type: AWS::CodePipeline::Pipeline
     Properties:
       RoleArn: !GetAtt CodePipelineServiceRole.Arn
       ArtifactStore:
