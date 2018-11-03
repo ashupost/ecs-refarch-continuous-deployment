@@ -34,6 +34,21 @@ Conditions:
 
 
 Resources:
+  ECSServiceRole:
+    Type: AWS::IAM::Role
+    Properties:
+      Path: /
+      AssumeRolePolicyDocument: |
+        {
+            "Statement": [{
+                "Effect": "Allow",
+                "Principal": { "Service": [ "ecs.amazonaws.com" ]},
+                "Action": [ "sts:AssumeRole" ]
+            }]
+        }
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AmazonEC2ContainerServiceRole
+
   TaskExecutionRole:
     Type: AWS::IAM::Role
     Properties:
@@ -58,6 +73,7 @@ Resources:
     Condition: Fargate
     Properties:
       Cluster: !Ref Cluster
+      Role: !Ref ECSServiceRole
       DesiredCount: !Ref DesiredCount
       TaskDefinition: !Ref TaskDefinition
       LaunchType: FARGATE
@@ -77,6 +93,7 @@ Resources:
     Condition: EC2
     Properties:
       Cluster: !Ref Cluster
+      Role: !Ref ECSServiceRole
       DesiredCount: !Ref DesiredCount
       TaskDefinition: !Ref TaskDefinition
       LaunchType: EC2
